@@ -1,75 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banque Manager</title>
-    <link rel="stylesheet" href="./css/app.css" id="colorTheme" />
-    <script type="module" src="./js/app.js" defer></script>
-  </head>
-  <body>
-    <section class="hero">
-      <p>Bonjour <span id="firstname"></span></p>
-      <h1>_Bijour Banque <span>💶</span></h1>
-      <h2 id="total"></h2>
-    </section>
-    <section>
-      <div class="row">
-        <div class="column credit">
-          crédit : <span class="txt-color-white" id="totalCredit"></span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Banque Manager</title>
+        <link rel="stylesheet" href="./css/app.css" id="colorTheme" />
+        <script type="module" src="./js/app.js" defer></script>
+    </head>
+
+    <body>
+        <section class="hero">
+            <p>Bonjour <span id="firstname"></span> <span id="name"></span></p>
+            <h1>_Bijour Banque <span>💶</span></h1>
+            <h2 id="total"></h2>
+        </section>
+        <section>
+            <div class="row">
+                <div class="column credit"> Crédit : <span class="txt-color-white" id="totalCredit"></span></div>
+                <div class="column debit"> Débit :  <span class="txt-color-white" id="totalDebit"></span><span class="percent txt-color-white" id="totalDebitPercent"></span></div>
+            </div>
+            <form action="#" id="ajoutOperation">
+                <select name="operation" id="operation">
+                    <option valeur="credit">+</option>
+                    <option valeur="debit">-</option>
+                </select>
+                <input type="text" name="intitule" id="intitule" placeholder="intitulé"/>
+                <input type="number" name="montant" id="montant" placeholder="montant" step="0.01"/>
+                <button type="submit">🥊</button>
+            </form>
+        </section>
+        <div class="wrapper">
+            <div class="row">
+                <div class="column">
+                    <h4 class="txt-color-gazoil">Crédit</h4>
+                    <ul id="detailsCredit">
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4 class="txt-color-red">Débit</h4>
+                    <ul id="detailsDebit">
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="column debit">
-          débit : <span class="txt-color-white" id="totalDebit"></span>
-          <span class="percent txt-color-white" id="totalDebitPercent"></span>
-        </div>
-      </div>
-      <form action="#" id="ajoutOperation">
-        <select name="operation" id="operation">
-          <option valeur="credit">+</option>
-          <option valeur="debit">-</option>
-        </select>
-        <input
-          type="text"
-          name="intitule"
-          id="intitule"
-          placeholder="intitulé"
-        />
-        <input
-          type="number"
-          name="montant"
-          id="montant"
-          placeholder="montant"
-        />
-        <button type="submit">🥊</button>
-      </form>
-    </section>
-    <div class="wrapper">
-      <div class="row">
-        <div class="column">
-          <h4 class="txt-color-gazoil">crédit</h4>
-          <ul id="detailsCredit">
-            <li>
-              <span class="intitule">salaire</span>
-              <span class="montant txt-color-gazoil">1520 €</span>
-            </li>
-          </ul>
-        </div>
-        <div class="column">
-          <h4 class="txt-color-red">débit</h4>
-          <ul id="detailsDebit">
-            <li>
-              <span class="intitule">achat PS4</span>
-              <span class="montant txt-color-red">499.99 €</span>
-              <span class="percent txt-color-red">32.89%</span>
-            </li>
-            <li>
-              <span class="intitule">achat TV</span>
-              <span class="montant txt-color-red">599 €</span>
-              <span class="percent txt-color-red">39.40%</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
